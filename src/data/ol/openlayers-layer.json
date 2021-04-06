@@ -1,0 +1,156 @@
+{
+    "name": "layers",
+    "auto": false,
+    "params": [
+        {
+            "type": {
+                "names": ["Object"]
+            },
+            "description": "Couches en WMTS (Geoportail)",
+            "name": "Couches en WMTS (Geoportail)",
+            "defaultvalue": true,
+            "value": null,
+            "section": true
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "ORTHOIMAGERY.ORTHOPHOTOS",
+            "service": "Tile",
+            "defaultvalue": true,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "GEOGRAPHICALGRIDSYSTEMS.MAPS",
+            "service": "Tile",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "CADASTRALPARCELS.PARCELS",
+            "service": "Tile",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "GEOGRAPHICALGRIDSYSTEMS.PLANIGN",
+            "service": "Tile",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Object"]
+            },
+            "description": "Couches WMS (Geoportail)",
+            "name": "Couches WMS (Geoportail)",
+            "defaultvalue": null,
+            "value": null,
+            "section": true
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "TN.RailTransportNetwork",
+            "service": "Image",
+            "defaultvalue": true,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "TN.RoadTransportNetwork",
+            "service": "Image",
+            "defaultvalue": true,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Object"]
+            },
+            "description": "Couches Vecteurs (KML, GeoJSON, GPX)",
+            "name": "Couches Vecteurs (KML, GeoJSON, GPX)",
+            "defaultvalue": null,
+            "value": null,
+            "section": true
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "/ressources/data.kml",
+            "service": "Vector.KML",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "/ressources/data.geojson",
+            "service": "Vector.GeoJSON",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "/ressources/data.gpx",
+            "service": "Vector.GPX",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Object"]
+            },
+            "description": "Couches Vecteurs tuilés (Geoportail)",
+            "name": "Couches Vecteurs tuilés (Geoportail)",
+            "defaultvalue": null,
+            "value": null,
+            "section": true
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "...",
+            "service": "VectorTile",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        }
+    ]
+}

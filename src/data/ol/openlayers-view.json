@@ -1,0 +1,76 @@
+{
+    "name": "view",
+    "auto": false,
+    "params": [
+        {
+            "type": {
+                "names": ["Object"]
+            },
+            "description": "View options",
+            "name": "options",
+            "defaultvalue": null,
+            "value": null,
+            "section": true
+        },
+        {
+            "type": {
+                "names": ["Array"]
+            },
+            "description": "The initial center for the view. If a user projection is not set, the coordinate system for the center is specified with the projection option.",
+            "name": "options.center",
+            "defaultvalue": "[288074.8449901076, 6247982.515792289]",
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Number"]
+            },
+            "description": "Zoom level used to calculate the initial resolution for the view.",
+            "name": "options.zoom",
+            "defaultvalue": 16,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Boolean"]
+            },
+            "description": "",
+            "name": "options.multiWorld",
+            "defaultvalue": false,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["String"]
+            },
+            "description": "The projection. The default is Spherical Mercator.",
+            "name": "options.projection",
+            "defaultvalue": "EPSG:3857",
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Number"]
+            },
+            "description": "The initial rotation for the view in radians (positive rotation clockwise, 0 means North).",
+            "name": "options.rotation",
+            "defaultvalue": 0,
+            "value": null,
+            "section": false
+        },
+        {
+            "type": {
+                "names": ["Number"]
+            },
+            "description": "The zoom factor used to compute the corresponding resolution.",
+            "name": "options.zoomFactor",
+            "defaultvalue": 2,
+            "value": null,
+            "section": false
+        }
+    ]
+}

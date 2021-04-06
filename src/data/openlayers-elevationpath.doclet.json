@@ -1,0 +1,230 @@
+{
+    "name": "elevationpath",
+    "auto": true,
+    "params": [{
+        "type": {
+            "names": ["Object"]
+        },
+        "description": "options for function call.",
+        "name": "options",
+        "value": null,
+        "section": true
+    }, {
+        "type": {
+            "names": ["String"]
+        },
+        "optional": true,
+        "description": "API key for services call (isocurve and autocomplete services), mandatory if autoconf service has not been charged in advance",
+        "name": "options.apiKey",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "specify if control should be actived at startup. Default is false.",
+        "name": "options.active",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "use of ssl or not (default true, service requested using https protocol)",
+        "name": "options.ssl",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "elevation path service options. See {@link http://ignf.github.io/geoportal-access-lib/latest/jsdoc/module-Services.html#~getAltitude Gp.Services.getAltitude()} for available options",
+        "name": "options.elevationPathOptions",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "Layer informations to be displayed in LayerSwitcher widget (only if a LayerSwitcher is also added to the map)",
+        "name": "options.layerDescription",
+        "value": null,
+        "section": true
+    }, {
+        "type": {
+            "names": ["String"]
+        },
+        "optional": true,
+        "defaultvalue": "\"Profil altimétrique\"",
+        "description": "Layer title to be displayed in LayerSwitcher",
+        "name": "options.layerDescription.title",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["String"]
+        },
+        "optional": true,
+        "defaultvalue": "\"Mon profil altimétrique\"",
+        "description": "Layer description to be displayed in LayerSwitcher",
+        "name": "options.layerDescription.description",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "description": "styles management",
+        "name": "options.stylesOptions",
+        "value": null,
+        "section": true
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "styles management of marker displayed on map when the user follows the elevation path. Specified with an {@link https://openlayers.org/en/latest/apidoc/ol.style.Image.html ol.style.Image} subclass object",
+        "name": "options.stylesOptions.marker",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "styles used when drawing. Specified with following properties.",
+        "name": "options.stylesOptions.draw",
+        "value": null,
+        "section": true
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "Style for mouse pointer when drawing the line. Specified with an {@link https://openlayers.org/en/latest/apidoc/ol.style.Image.html ol.style.Image} subclass object.",
+        "name": "options.stylesOptions.draw.pointer",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "Line Style when drawing. Specified with an {@link https://openlayers.org/en/latest/apidoc/ol.style.Stroke.html ol.style.Stroke} object.",
+        "name": "options.stylesOptions.draw.start",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "Line Style when finished drawing. Specified with an {@link https://openlayers.org/en/latest/apidoc/ol.style.Stroke.html ol.style.Stroke} object.",
+        "name": "options.stylesOptions.draw.finish",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "profile options.",
+        "name": "options.displayProfileOptions",
+        "value": null,
+        "section": true
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display the total distance of the path",
+        "name": "options.displayProfileOptions.totalDistance",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display the greater slope into the graph",
+        "name": "options.displayProfileOptions.greaterSlope",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display the mean slope into the graph",
+        "name": "options.displayProfileOptions.meanSlope",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display the ascending elevation into the graph",
+        "name": "options.displayProfileOptions.ascendingElevation",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display the descending elevation into the graph",
+        "name": "options.displayProfileOptions.descendingElevation",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Boolean"]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "display current slope value on profile mouseover",
+        "name": "options.displayProfileOptions.currentSlope",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["function"]
+        },
+        "optional": true,
+        "description": "function to display profile if you want to cutomise it. By default, ([DISPLAY_PROFILE_BY_DEFAULT()](./ol.control.ElevationPath.html#.DISPLAY_PROFILE_BY_DEFAULT)) is used. Helper functions to use with D3 ([DISPLAY_PROFILE_LIB_D3()](./ol.control.ElevationPath.html#.DISPLAY_PROFILE_LIB_D3)) or AmCharts ([DISPLAY_PROFILE_LIB_AMCHARTS()](./ol.control.ElevationPath.html#.DISPLAY_PROFILE_LIB_AMCHARTS)) frameworks are also provided. You may also provide your own function.",
+        "name": "options.displayProfileOptions.apply",
+        "value": null,
+        "section": false
+    }, {
+        "type": {
+            "names": ["Object"]
+        },
+        "optional": true,
+        "description": "DOM container to use to display the profile.",
+        "name": "options.displayProfileOptions.target",
+        "value": null,
+        "section": false
+    }],
+    "examples": ["var measure = new ol.control.ElevationPath({\n   stylesOptions : {\n    draw : {\n      finish : new ol.style.Stroke({\n           color : \"rgba(0, 0, 0, 0.5)\",\n           width : 2\n      })\n    },\n   }\n   displayProfileOptions : {\n      apply : ol.control.ElevationPath.DISPLAY_PROFILE_RAW,\n   }\n});\n\nExemples :\n- displayProfileOptions.apply : null\n- displayProfileOptions.apply : function (elevations, container, context) {  // do some stuff... }\n- displayProfileOptions.apply : ol.control.ElevationPath.DISPLAY_PROFILE_{LIB_AMCHARTS | LIB_D3 | RAW}"]
+}

@@ -1,0 +1,19 @@
+{
+    "openlayers" : [
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Drawing.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/GetFeatureInfo.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Route.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Isocurve.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/MeasureToolBox.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/SearchEngine.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/ElevationPath.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/LayerImport.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/MousePosition.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/GeoportalAttribution.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/LayerSwitcher.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/ReverseGeocode.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Measures/MeasureArea.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Measures/MeasureLength.js",
+        "node_modules/geoportal-extensions-openlayers/src/OpenLayers/Controls/Measures/MeasureAzimuth.js"
+    ]
+}
