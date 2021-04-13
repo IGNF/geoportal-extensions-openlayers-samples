@@ -54,12 +54,12 @@
 
         <TheVersion :version="info.version" :date="info.date"/>
 
-        <ThePopup v-if="show" @close="show = false">
+        <ThePopup v-if="show" @close="show = false" @copy="onClickCopyCode">
             <template v-slot:header>
                 <h3>Code JS</h3>
             </template>
             <template v-slot:body>
-                <pre>{{ code }}</pre>
+                <highlightjs language='javascript' :code="code" />
             </template>
             <template v-slot:footer>
                 version {{ info.version }}
@@ -200,6 +200,14 @@ export default {
         },
         onClickReset() {
             // TODO reinit les options par defaut
+        },
+        onClickCopyCode() {
+            var self = this;
+            navigator.clipboard.writeText(tpl.getCodeJS())
+            .then(
+                () => { self.$log.info("Copy to clipboard !");},
+                () => { self.$log.error("Copy to clipboard not supported !"); }
+            );
         },
 
         /** activation du widget sur la carte */

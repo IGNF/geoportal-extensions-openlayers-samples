@@ -22,9 +22,14 @@
                         <slot name="footer">
                         default footer
                         </slot>
-                        <button class="modal-default-button" @click="$emit('close')">
-                            Fermer
-                        </button>
+                        <div class="container-default-buttons">
+                          <button class="modal-default-button" @click="$emit('close')">
+                              Fermer
+                          </button>
+                          <button class="modal-default-button" @click="$emit('copy')">
+                              Copier
+                          </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +64,7 @@ export default {
 }
 
 .modal-container {
-  width: 450px;
+  width: 500px;
   height: 60%;
   margin: 0px auto;
   padding: 20px 30px;
@@ -80,10 +85,16 @@ export default {
   margin: 20px 0;
 }
 
+.container-default-buttons {
+  display: flex;
+}
+
 .modal-default-button {
   display: block;
   background: #3796AD;
-  margin-top: 1rem;
+  margin: 1rem;
+  width: 100px;
+  height: 25px;
 }
 
 .modal-close {

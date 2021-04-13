@@ -8,6 +8,12 @@ import TheCptJsdoc from "./components/router/TheCptJsdoc";
 
 import VueLogger from 'vuejs-logger';
 
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import vuePlugin from "@highlightjs/vue-plugin";
+
+hljs.registerLanguage('javascript', javascript);
+
 const isProduction = process.env.NODE_ENV === 'production';
  
 const options = {
@@ -19,6 +25,8 @@ const options = {
     separator: '|',
     showConsoleColors: true
 };
+
+Vue.use(vuePlugin);
 
 Vue.use(VueLogger, options);
 
