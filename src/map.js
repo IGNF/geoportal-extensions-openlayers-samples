@@ -43,8 +43,9 @@ import JsonSearchEngine from "./data/openlayers-searchengine.doclet.json";
 import JsonOlView from "./data/ol/openlayers-view.json";
 import JsonOlLayer from "./data/ol/openlayers-layer.json";
 
+// gestion des loggers des API
 const isProduction = process.env.NODE_ENV === 'production';
-Logger.active = !isProduction; //FIXME sans effet !?
+isProduction ? Logger.disableAll() : Logger.enableAll();
 
 /** suppression  de la carte */
 export function removeMap() {
