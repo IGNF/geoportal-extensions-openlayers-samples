@@ -2,6 +2,8 @@
 
 Exemples d'utilisation de l'API des extensions du Géoportail (geoportal-extensions).
 
+![Exemple Image](capture.png)
+
 ## Prerequisites
 
 * [Git](https://git-scm.com/)
