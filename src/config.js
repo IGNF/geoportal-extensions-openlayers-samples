@@ -8,8 +8,8 @@ var  apiKey = "jhyvi0fgmnuxvfv0zjzorvdn";
  */
 var project = {
     sourceProject : "https://github.com/IGNF/geoportal-extensions-openlayers-samples",
-    sourceExtensions: "http://ignf.github.io/geoportal-extensions",
-    jsdoc: "http://ignf.github.io/geoportal-extensions/current/jsdoc/openlayers",
+    sourceExtensions: "https://ignf.github.io/geoportal-extensions",
+    jsdoc: "https://ignf.github.io/geoportal-extensions/current/jsdoc/openlayers",
     library: {
         name: "OpenLayers",
         url: "https://openlayers.org/",
