@@ -2,9 +2,9 @@
 <template>
     <transition name="modal">
         <div class="modal-mask">
+            <div class="modal-close" @click="$emit('close')">&times;</div>
             <div class="modal-wrapper">
                 <div class="modal-container">
-                    <div class="modal-close" @click="$emit('close')">&times;</div>
 
                     <div class="modal-header">
                         <slot name="header">
@@ -64,8 +64,12 @@ export default {
 }
 
 .modal-container {
-  width: 500px;
-  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
   margin: 0px auto;
   padding: 20px 30px;
   overflow: scroll;
