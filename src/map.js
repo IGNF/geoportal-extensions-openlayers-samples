@@ -47,6 +47,9 @@ import JsonOlLayer from "./data/ol/openlayers-layer.json";
 const isProduction = process.env.NODE_ENV === 'production';
 isProduction ? Logger.disableAll() : Logger.enableAll();
 
+// gestion du path de deploiement
+const publicPath = process.env.BASE_URL;
+
 /** suppression  de la carte */
 export function removeMap() {
     var map = document.getElementById("map");
@@ -57,7 +60,7 @@ export function removeMap() {
 
 /** ajout de la carte */
 export function addMap(options, status) {
-    
+
     // Creation de la Map
     var createMap = function () {
         tpl.clear();
@@ -87,7 +90,7 @@ export function addMap(options, status) {
             if (element.service.toLowerCase() === "vector.kml") {
                 layersOptions.push(new VectorLayer({
                         source: new VectorSource({
-                            url: element.name,
+                            url: publicPath + element.name,
                             format: new KML()
                         })
                 }));
@@ -96,7 +99,7 @@ export function addMap(options, status) {
             if (element.service.toLowerCase() === "vector.gpx") {
                 layersOptions.push(new VectorLayer({
                         source: new VectorSource({
-                            url: element.name,
+                            url: publicPath + element.name,
                             format: new GPX()
                         })
                 }));
@@ -105,7 +108,7 @@ export function addMap(options, status) {
             if (element.service.toLowerCase() === "vector.geojson") {
                 layersOptions.push(new VectorLayer({
                         source: new VectorSource({
-                            url: element.name,
+                            url: publicPath + element.name,
                             format: new GeoJSON()
                         })
                 }));
@@ -116,7 +119,7 @@ export function addMap(options, status) {
                     // EVOL ol v6 !
                     // cf. https://openlayers.org/en/latest/apidoc/module-ol_layer_MapboxVector.html
                     // new MapboxVector({
-                    //     styleUrl: '',
+                    //     styleUrl: publicPath + '',
                     // })
                 );
             }
