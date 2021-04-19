@@ -29,7 +29,9 @@
             </div>
         </fieldset>
 
-        <ThePopup v-if="show" @close="show = false">
+        <ThePopup v-if="show" 
+            @close="onClickClosePopup" 
+            @copy="onClickCopyCode">
             <template v-slot:header>
                 <h3>Exemples</h3>
             </template>
@@ -78,7 +80,18 @@ export default {
             this.options.examples.forEach(ex => {
                 this.exemple += ex;
             });
-        }
+        },
+        onClickClosePopup() {
+            this.show = false;
+        },
+        onClickCopyCode() {
+            var self = this;
+            navigator.clipboard.writeText(this.exemple)
+            .then(
+                () => { self.$log.info("Copy to clipboard !");},
+                () => { self.$log.error("Copy to clipboard not supported !"); }
+            );
+        },
     }
 };
 </script>

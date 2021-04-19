@@ -54,7 +54,9 @@
 
         <TheVersion :version="info.version" :date="info.date"/>
 
-        <ThePopup v-if="show" @close="show = false" @copy="onClickCopyCode">
+        <ThePopup v-if="show" 
+            @close="onClickClosePopup" 
+            @copy="onClickCopyCode">
             <template v-slot:header>
                 <h3>Code JS</h3>
             </template>
@@ -208,6 +210,9 @@ export default {
                 () => { self.$log.info("Copy to clipboard !");},
                 () => { self.$log.error("Copy to clipboard not supported !"); }
             );
+        },
+         onClickClosePopup() {
+            this.show = false;
         },
 
         /** activation du widget sur la carte */

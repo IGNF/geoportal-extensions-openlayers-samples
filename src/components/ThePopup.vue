@@ -23,10 +23,10 @@
                         default footer
                         </slot>
                         <div class="container-default-buttons">
-                          <button class="modal-default-button" @click="$emit('close')">
+                          <button class="modal-default-button" @click.prevent="$emit('close')">
                               Fermer
                           </button>
-                          <button class="modal-default-button" @click="$emit('copy')">
+                          <button class="modal-default-button" @click.prevent="$emit('copy')">
                               Copier
                           </button>
                         </div>
