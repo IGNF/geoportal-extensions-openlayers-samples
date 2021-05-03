@@ -62,7 +62,7 @@ export default {
         return {
             show : false,
             exemple : "",
-            active : true
+            active : false
         }
     },
     methods: {

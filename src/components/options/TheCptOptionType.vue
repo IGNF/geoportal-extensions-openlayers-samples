@@ -202,6 +202,7 @@ export default {
         resize: vertical;
     }
 
+    .type-fct-option,
     .type-obj-option {
         padding: 5px;
     }
@@ -212,8 +213,7 @@ export default {
     .type-text-option,
     .type-select-option,
     .type-array-option,
-    .type-number-option,
-    .type-fct-option {
+    .type-number-option {
         padding: 12px;
     }
 

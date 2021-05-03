@@ -266,20 +266,20 @@ export function getMapOptions() {
 /** obtenir le statut des widgets par defaut */
 export function getWidgetStatus() {
     return {
-        measurelength : true,
-        measurearea : true,
-        measureazimuth : true,
-        drawing : true,
-        layerimport : true,
-        getfeatureinfo : true,
-        geoportalattribution : true,
-        route : true,
-        geoportalmouseposition : true,
-        layerswitcher : true,
-        reversegeocode : true,
-        searchengine : true,
-        isocurve : true,
-        elevationpath : true
+        measurelength : false,
+        measurearea : false,
+        measureazimuth : false,
+        drawing : false,
+        layerimport : false,
+        getfeatureinfo : false,
+        geoportalattribution : false,
+        route : false,
+        geoportalmouseposition : false,
+        layerswitcher : false,
+        reversegeocode : false,
+        searchengine : false,
+        isocurve : false,
+        elevationpath : false
     };
 }
 
