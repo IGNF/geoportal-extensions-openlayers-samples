@@ -1,3 +1,4 @@
+[![Publish samples project ...](https://github.com/IGNF/geoportal-extensions-openlayers-samples/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/IGNF/geoportal-extensions-openlayers-samples/actions/workflows/build.yml)
 [![DeepScan grade](https://deepscan.io/api/teams/12425/projects/17129/branches/382181/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=12425&pid=17129&bid=382181)
 
 # vuejs / geoportal-extensions
