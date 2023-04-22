@@ -61,7 +61,7 @@ export default {
         flex-direction: row;
         -webkit-align-items: center;
         align-items: center;
-        justify-content: center;
+        /* justify-content: center; */
     }
     .header-p {
         margin: 10px;
