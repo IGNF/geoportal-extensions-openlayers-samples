@@ -15,6 +15,9 @@ Exemples d'utilisation de l'API des extensions du Géoportail (geoportal-extensi
 * [Google Chrome](https://google.com/chrome/)
 * [DevTool VueJS](https://devtools.vuejs.org/guide/installation.html)
 
+**NOTE**
+> testé avec nodeJS 14.19.0 / npm 6.14.16
+
 ## Installation
 
 * `npm install`
