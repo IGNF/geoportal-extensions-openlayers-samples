@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.5",
-    "geoportal-extensions-openlayers": "ol-3.2.22",
+    "geoportal-extensions-openlayers": "ol-3.3.0",
     "ol": "6.9.0"
   },
   "devDependencies": {
