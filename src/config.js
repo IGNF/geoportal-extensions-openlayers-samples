@@ -1,7 +1,7 @@
 /**
  * Configuration par defaut de la carte
  */
-var  apiKey = "jhyvi0fgmnuxvfv0zjzorvdn";
+var  apiKey = "full";
 
 /**
  * Configuration par defaut du projet
