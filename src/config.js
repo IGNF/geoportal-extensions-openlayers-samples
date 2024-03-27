@@ -15,8 +15,8 @@ var project = {
         url: "https://openlayers.org/",
         logo: "./assets/logo-openlayers.png",
         dist: {
-            js: "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v5.3.0/build/ol.js",
-            css: "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v5.3.0/css/ol.css"
+            js: "https://raw.githubusercontent.com/IGNF/geoportal-extensions/master/samples-src/resources/vendor/ol/v6.9.0/ol.js",
+            css: "https://raw.githubusercontent.com/IGNF/geoportal-extensions/master/samples-src/resources/vendor/ol/v6.9.0/ol.css"
         },
         plugin: {
             js: "https://ignf.github.io/geoportal-extensions/openlayers-latest/dist/GpPluginOpenLayers.js",
