@@ -16,14 +16,31 @@ import {
 } from "ol/layer";
 
 import "ol/ol.css";
+import "geoportal-extensions-openlayers/css/Portail.css";
 
 import {
-    olExtended, 
-    olExtVersion, 
-    olExtDate,
-    Services,
-    Logger
+    version,
+    date,
+    LoggerUtils as Logger,
+    LayerWMTS as GeoportalWMTS,
+    LayerWMS as GeoportalWMS,
+    Drawing,
+    Isocurve,
+    Route,
+    LayerImport,
+    GeoportalAttribution,
+    ElevationPath,
+    MeasureArea,
+    MeasureAzimuth,
+    MeasureLength,
+    LayerSwitcher,
+    MousePosition as GeoportalMousePosition,
+    ReverseGeocode,
+    SearchEngine,
+    GetFeatureInfo
 } from "geoportal-extensions-openlayers";
+
+import Gp from "geoportal-access-lib"
 
 import JsonDrawing from "./data/openlayers-drawing.doclet.json";
 import JsonElevationPath from "./data/openlayers-elevationpath.doclet.json";
@@ -76,13 +93,13 @@ export function addMap(options, status) {
                 return;
             }
             if (element.service.toLowerCase() === "tile") {
-                layersOptions.push(new olExtended.layer.GeoportalWMTS({
+                layersOptions.push(new GeoportalWMTS({
                     layer : element.name
                 }));
                 tpl.addLayer("tile", element.name);
             }
             if (element.service.toLowerCase() === "image") {
-                layersOptions.push(new olExtended.layer.GeoportalWMS({
+                layersOptions.push(new GeoportalWMS({
                     layer : element.name
                 }));
                 tpl.addLayer("image", element.name);
@@ -136,95 +153,98 @@ export function addMap(options, status) {
         var opts;
         if (status.drawing) {
             opts = setOptions(options.drawing);
-            var drawing = new olExtended.control.Drawing();
+            var drawing = new Drawing();
             map.addControl(drawing);
             tpl.addWidget("drawing", opts);
         }
         if (status.isocurve) {
             opts = setOptions(options.isocurve);
-            var iso = new olExtended.control.Isocurve(opts);
+            var iso = new Isocurve(opts);
             map.addControl(iso);
             tpl.addWidget("isocurve", opts);
         }
         if (status.layerimport) {
             opts = setOptions(options.layerimport);
-            var layerImport = new olExtended.control.LayerImport(opts);
+            var layerImport = new LayerImport(opts);
             map.addControl(layerImport);
             tpl.addWidget("layerimport", opts);
         }
         if (status.layerswitcher) {
             opts = setOptions(options.layerswitcher);
-            var layerSwitcher = new olExtended.control.LayerSwitcher(opts);
+            var layerSwitcher = new LayerSwitcher(opts);
             map.addControl(layerSwitcher);
             tpl.addWidget("layerswitcher", opts);
         }
         if (status.geoportalmouseposition) {
             opts = setOptions(options.geoportalmouseposition);
-            var mp = new olExtended.control.GeoportalMousePosition(opts);
+            var mp = new GeoportalMousePosition(opts);
             map.addControl(mp);
             tpl.addWidget("geoportalmouseposition", opts);
         }
         if (status.route) {
             opts = setOptions(options.route);
-            var route = new olExtended.control.Route(opts);
+            var route = new Route(opts);
             map.addControl(route);
             tpl.addWidget("route", opts);
         }
         if (status.reversegeocode) {
             opts = setOptions(options.reversegeocode);
-            var reverse = new olExtended.control.ReverseGeocode(opts);
+            var reverse = new ReverseGeocode(opts);
             map.addControl(reverse);
             tpl.addWidget("reversegeocode", opts);
         }
         if (status.searchengine) {
             opts = setOptions(options.searchengine);
-            var search = new olExtended.control.SearchEngine(opts);
+            var search = new SearchEngine(opts);
             map.addControl(search);
             tpl.addWidget("searchengine", opts);
         }
         if (status.getfeatureinfo) {
             opts = setOptions(options.getfeatureinfo);
-            var feature =  new olExtended.control.GetFeatureInfo(opts);
+            var feature =  new GetFeatureInfo(opts);
             map.addControl(feature);
             tpl.addWidget("getfeatureinfo", opts);
         }
         if (status.measurelength) {
             opts = setOptions(options.measurelength);
-            var measureLength = new olExtended.control.MeasureLength(opts);
+            var measureLength = new MeasureLength(opts);
             map.addControl(measureLength);
             tpl.addWidget("measurelength", opts);
         }
         if (status.measurearea) {
             opts = setOptions(options.measurearea);
-            var measureArea = new olExtended.control.MeasureArea(opts);
+            var measureArea = new MeasureArea(opts);
             map.addControl(measureArea);
             tpl.addWidget("measurearea", opts);
         }
         if (status.measureazimuth) {
             opts = setOptions(options.measureazimuth);
-            var measureAzimuth = new olExtended.control.MeasureAzimuth(opts);
+            var measureAzimuth = new MeasureAzimuth(opts);
             map.addControl(measureAzimuth);
             tpl.addWidget("measureazimuth", opts);
         }
         if (status.elevationpath) {
             opts = setOptions(options.elevationpath);
-            var measureProfil = new olExtended.control.ElevationPath(opts);
+            var measureProfil = new ElevationPath(opts);
             map.addControl(measureProfil);
             tpl.addWidget("elevationpath", opts);
         }
         if (status.geoportalattribution) {
             opts = setOptions(options.geoportalattribution);
-            var attributions = new olExtended.control.GeoportalAttribution(opts);
+            var attributions = new GeoportalAttribution(opts);
             map.addControl(attributions);
             tpl.addWidget("geoportalattribution", opts);
         }
     };
 
     // Appel autoconf
-    Services.getConfig({
+    Gp.Services.getConfig({
         apiKey: config.apiKey,
         protocol : "XHR",
-        onSuccess : createMap
+        onSuccess : createMap,
+        onFailure : (e) => {
+            console.error(e);
+        }
     });
 }
 
@@ -286,7 +306,7 @@ export function getWidgetStatus() {
 /** obtenir la version / date des widgets */
 export function getLibraryInfo() {
     return {
-        version : "[" + olExtVersion + "]",
-        date : olExtDate
+        version : "[" + version + "]",
+        date : date
     };
 }

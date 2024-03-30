@@ -73,7 +73,7 @@
             "description": "",
             "name": "TN.RailTransportNetwork",
             "service": "Image",
-            "defaultvalue": true,
+            "defaultvalue": false,
             "value": null,
             "section": false
         },
@@ -84,7 +84,7 @@
             "description": "",
             "name": "TN.RoadTransportNetwork",
             "service": "Image",
-            "defaultvalue": true,
+            "defaultvalue": false,
             "value": null,
             "section": false
         },
