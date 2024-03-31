@@ -48,6 +48,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^9.24.0",
     "highlight.js": "^11.9.0",
+    "html-webpack-tags-plugin": "^3.0.2",
     "jsdoc": "^4.0.2",
     "merge-deep": "^3.0.3",
     "storybook": "^8.0.5",

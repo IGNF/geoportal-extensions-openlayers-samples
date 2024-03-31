@@ -5,6 +5,7 @@
 
         <TheHeader title="Exemples d'utilisation de l'API des extensions"/>
         <div id="app-content">
+            <TheThematic/>
             <div class="header-library">
                 <div class="header-p">
                     <a :href="url">
@@ -12,8 +13,8 @@
                     </a>
                 </div>
                 <div class="header-p">Accès à la bibliothèque des <a :href="source">extensions Geoportail</a></div>
-                
             </div>
+            
 
             <TheRouter :name="name" />
 
@@ -29,6 +30,7 @@
 import TheHeader from "./components/TheHeader";
 import TheFooter from "./components/TheFooter";
 import TheRouter from "./components/TheRouter";
+import TheThematic from "./components/TheThematic";
 
 import { config } from "./config";
 
@@ -37,7 +39,8 @@ export default {
   components: {
     TheHeader,
     TheRouter,
-    TheFooter
+    TheFooter,
+    TheThematic
   },
   data () {
     return {

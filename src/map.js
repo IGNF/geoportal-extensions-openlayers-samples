@@ -18,9 +18,9 @@ import {
 import "ol/ol.css";
 
 // TODO switch theme classqiue / dsfr
-import "@gouvfr/dsfr/dist/dsfr.css";
-import "@gouvfr/dsfr/dist/utility/icons/icons.css";
-import "geoportal-extensions-openlayers/css/Dsfr.css";
+// import "@gouvfr/dsfr/dist/dsfr.css";
+// import "@gouvfr/dsfr/dist/utility/icons/icons.css";
+// import "geoportal-extensions-openlayers/css/Dsfr.css";
 // import "geoportal-extensions-openlayers/css/Portail.css";
 
 import {
