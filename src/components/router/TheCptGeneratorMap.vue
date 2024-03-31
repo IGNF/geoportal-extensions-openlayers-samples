@@ -54,20 +54,21 @@
 
         <TheVersion :version="info.version" :date="info.date"/>
 
-        <!-- FIXME la popup ne fonctionne plus depuis la migration en vue3 !? -->
-        <ThePopup v-if="show" 
-            @close="onClickClosePopup" 
-            @copy="onClickCopyCode">
-            <template v-slot:header>
-                <h3>Code JS</h3>
-            </template>
-            <template v-slot:body>
-                <highlightjs language='javascript' :code="code" />
-            </template>
-            <template v-slot:footer>
-                version {{ info.version }}
-            </template>
-        </ThePopup>
+        <Teleport to="body">
+            <ThePopup v-if="show" 
+                @close="onClickClosePopup" 
+                @copy="onClickCopyCode">
+                <template v-slot:header>
+                    <h3>Code JS</h3>
+                </template>
+                <template v-slot:body>
+                    <highlightjs language='javascript' :code="code" />
+                </template>
+                <template v-slot:footer>
+                    version {{ info.version }}
+                </template>
+            </ThePopup>
+        </Teleport>
 
     </div>
 </template>
