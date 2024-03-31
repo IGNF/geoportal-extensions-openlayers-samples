@@ -244,7 +244,7 @@ export default {
   color: #FFFFFF;
   padding: 20px;
   margin: 5px;
-  width: 120px;
+  /* width: 120px; */
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
