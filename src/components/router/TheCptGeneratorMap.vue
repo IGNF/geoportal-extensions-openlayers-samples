@@ -54,6 +54,7 @@
 
         <TheVersion :version="info.version" :date="info.date"/>
 
+        <!-- FIXME la popup ne fonctionne plus depuis la migration en vue3 !? -->
         <ThePopup v-if="show" 
             @close="onClickClosePopup" 
             @copy="onClickCopyCode">
