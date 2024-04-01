@@ -3,6 +3,7 @@ import TheRouter from './../components/TheRouter.vue';
 export default {
   title: 'Example/TheRouter',
   component: TheRouter,
+  tags: ['autodocs'],
   argTypes: {}
 };
 

@@ -3,7 +3,12 @@ import TheVersion from './../components/TheVersion.vue';
 export default {
   title: 'Example/TheVersion',
   component: TheVersion,
-  argTypes: {}
+  tags: ['autodocs'],  
+  argTypes: {},
+  args: {
+      version: "1.0.0",
+      date: "01/01/2021"
+  }
 };
 
 const Template = (args, { argTypes }) => ({
@@ -14,7 +19,7 @@ const Template = (args, { argTypes }) => ({
 
 export const ByDefault = Template.bind({});
 ByDefault.args = {
-  info: {
+  info : {
     version: "1.0.0",
     date: "01/01/2021"
   }

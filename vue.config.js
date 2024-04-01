@@ -9,38 +9,38 @@ module.exports = {
     plugins: [
       new CopyWebpackPlugin ({
         patterns : [
-          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Portail.css"), to : "dist/theme"},
-          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Dsfr.css"), to : "dist/theme"},
-          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/dsfr.css"), to : "dist/css"},
-          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/utility/icons/icons.css"), to : "dist/css"},
+          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Portail.css"), to : "theme"},
+          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Dsfr.css"), to : "theme"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/dsfr.css"), to : "css"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/utility/icons/icons.css"), to : "css"},
         ]
       }),
       new HtmlWebpackTagsPlugin({
         append : false, 
         links : [
           {
-            path : "dist/theme/Portail.css",
+            path : "theme/Portail.css",
             attributes : {
               rel : "stylesheet",
               id : "portail"
             }
           },
           {
-            path : "dist/css/dsfr.css",
+            path : "css/dsfr.css",
             attributes : {
               rel : "alternate stylesheet",
               id : "dsfr1"
             }
           },
           {
-            path : "dist/css/icons.css",
+            path : "css/icons.css",
             attributes : {
               rel : "alternate stylesheet",
               id : "dsfr2"
             }
           },
           {
-            path : "dist/theme/Dsfr.css",
+            path : "theme/Dsfr.css",
             attributes : {
               rel : "alternate stylesheet",
               id : "dsfr3"

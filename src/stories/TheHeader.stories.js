@@ -3,6 +3,7 @@ import TheHeader from './../components/TheHeader.vue';
 export default {
   title: 'Example/TheHeader',
   component: TheHeader,
+  tags: ['autodocs'],
   argTypes: {}
 };
 
