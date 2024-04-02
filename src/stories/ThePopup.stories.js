@@ -3,6 +3,7 @@ import ThePopup from './../components/ThePopup.vue';
 export default {
   title: 'Example/ThePopup',
   component: ThePopup,
+  tags: ['autodocs'],
   argTypes: {
     show : true,
   }

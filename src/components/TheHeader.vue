@@ -88,7 +88,7 @@ export default {
         /* positioning */
         position: fixed;
         padding: 5px 45px;
-        width: 128px;
+        /* width: 128px; */
         /* top right of the page */
         top: 50px;
         right: -50px;

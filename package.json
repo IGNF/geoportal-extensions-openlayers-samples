@@ -1,6 +1,6 @@
 {
   "name": "geoportal-extensions-openlayers-samples",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -15,20 +15,20 @@
     "npm": "~8.3.1"
   },
   "dependencies": {
+    "@gouvfr/dsfr": "^1.11.0",
     "file-saver": "^2.0.5",
-    "geoportal-extensions-openlayers": "3.4.0-beta4",
-    "ol": "6.9.0"
+    "geoportal-access-lib": "3.4.0",
+    "geoportal-extensions-openlayers": "./geoportal-extensions-openlayers-1.0.0-beta.5.tgz",
+    "ol": "8.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/eslint-parser": "^7.24.1",
     "@babel/preset-env": "^7.24.3",
-    "@chromatic-com/storybook": "^1.2.25",
-    "@highlightjs/vue-plugin": "^0.9.0",
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",
     "@storybook/addon-links": "^8.0.5",
-    "@storybook/addon-mdx-gfm": "^8.0.5",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
     "@storybook/blocks": "^8.0.5",
     "@storybook/test": "^8.0.5",
@@ -45,7 +45,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^9.24.0",
-    "highlight.js": "^10.7.2",
+    "highlight.js": "^11.9.0",
+    "html-webpack-tags-plugin": "^3.0.2",
     "jsdoc": "^4.0.2",
     "merge-deep": "^3.0.3",
     "storybook": "^8.0.5",

@@ -54,19 +54,21 @@
 
         <TheVersion :version="info.version" :date="info.date"/>
 
-        <ThePopup v-if="show" 
-            @close="onClickClosePopup" 
-            @copy="onClickCopyCode">
-            <template v-slot:header>
-                <h3>Code JS</h3>
-            </template>
-            <template v-slot:body>
-                <highlightjs language='javascript' :code="code" />
-            </template>
-            <template v-slot:footer>
-                version {{ info.version }}
-            </template>
-        </ThePopup>
+        <Teleport to="body">
+            <ThePopup v-if="show" 
+                @close="onClickClosePopup" 
+                @copy="onClickCopyCode">
+                <template v-slot:header>
+                    <h3>Code JS</h3>
+                </template>
+                <template v-slot:body>
+                    <highlightjs language='javascript' :code="code" />
+                </template>
+                <template v-slot:footer>
+                    version {{ info.version }}
+                </template>
+            </ThePopup>
+        </Teleport>
 
     </div>
 </template>
@@ -244,7 +246,7 @@ export default {
   color: #FFFFFF;
   padding: 20px;
   margin: 5px;
-  width: 120px;
+  /* width: 120px; */
   text-align: center;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

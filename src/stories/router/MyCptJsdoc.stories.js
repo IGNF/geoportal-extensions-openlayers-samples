@@ -3,6 +3,7 @@ import TheCptJsdoc from './../../components/router/TheCptJsdoc.vue';
 export default {
   title: 'Example/TheCptJsdoc',
   component: TheCptJsdoc,
+  tags: ['autodocs'],
   argTypes: {}
 };
 

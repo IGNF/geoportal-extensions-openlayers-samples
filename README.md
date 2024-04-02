@@ -16,7 +16,7 @@ Exemples d'utilisation de l'API des extensions du Géoportail (geoportal-extensi
 * [DevTool VueJS](https://devtools.vuejs.org/guide/installation.html)
 
 **NOTE**
-> testé avec nodeJS 16.14.0 / npm 8.3.1
+> testé avec nodeJS 20.10.0 / npm 10.2.3
 
 ## Installation
 
@@ -53,16 +53,6 @@ Specify what it takes to deploy your app.
 * `docker run -it -p 8888:80 --rm --name dockerize-vuejs-app-1 dockerize-vuejs-app`
 
 avec un accès à notre app sur http://localhost:8888
-
-## Upgrade dependencies
-
-<https://blog.vuejs.org/posts/vue-2-7-naruto#vue-cli-webpack>
-
-## Migrate to Vue3
-
-<https://v3-migration.vuejs.org/>
-
-Download Pdf : <https://www.vuemastery.com/migration-guide-cheat-sheet/>
 
 ## Further Reading / Useful Links
 

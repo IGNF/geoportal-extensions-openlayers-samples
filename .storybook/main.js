@@ -5,9 +5,7 @@ const config = {
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-interactions"
   ],
   framework: {
     name: "@storybook/vue3-webpack5",

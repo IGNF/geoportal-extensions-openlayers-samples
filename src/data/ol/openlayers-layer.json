@@ -28,7 +28,7 @@
                 "names": ["Boolean"]
             },
             "description": "",
-            "name": "GEOGRAPHICALGRIDSYSTEMS.MAPS",
+            "name": "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2",
             "service": "Tile",
             "defaultvalue": false,
             "value": null,
@@ -71,9 +71,9 @@
                 "names": ["Boolean"]
             },
             "description": "",
-            "name": "TN.RailTransportNetwork",
+            "name": "TN.RailTransportNetwork (migration en cours)",
             "service": "Image",
-            "defaultvalue": true,
+            "defaultvalue": false,
             "value": null,
             "section": false
         },
@@ -82,9 +82,9 @@
                 "names": ["Boolean"]
             },
             "description": "",
-            "name": "TN.RoadTransportNetwork",
+            "name": "TN.RoadTransportNetwork (migration en cours)",
             "service": "Image",
-            "defaultvalue": true,
+            "defaultvalue": false,
             "value": null,
             "section": false
         },
