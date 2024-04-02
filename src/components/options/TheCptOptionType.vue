@@ -103,7 +103,7 @@ export default {
         }
     },
     mounted() {
-        this.$log.debug(this, this.option.defaultvalue);
+        this.$log.debug("default values", this.option.defaultvalue);
         if ("defaultvalue" in this.option) {
             var el = this.$refs["type-option"];
             if (el) {

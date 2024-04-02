@@ -13,3 +13,5 @@
 *.log
 package-lock.json
 
+
+*storybook.log

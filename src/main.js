@@ -1,13 +1,15 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createApp } from 'vue';
+import { createMemoryHistory, createRouter } from 'vue-router'
 import App from "./App.vue";
 
 // composants
 import TheCptGeneratorMap from "./components/router/TheCptGeneratorMap";
 import TheCptJsdoc from "./components/router/TheCptJsdoc";
 
-import VueLogger from 'vuejs-logger';
+// logger
+import VueLogger from 'vuejs3-logger';
 
+// lib JS
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import vuePlugin from "@highlightjs/vue-plugin";
@@ -26,24 +28,20 @@ const options = {
     showConsoleColors: true
 };
 
-Vue.use(vuePlugin);
 
-Vue.use(VueLogger, options);
+const app =createApp(App);
 
-Vue.use(VueRouter);
+app.use(vuePlugin);
 
-Vue.config.productionTip = false;
+app.use(VueLogger, options);
 
-const router = new VueRouter({
-    mode: 'history',
-    base: __dirname,
+const router = new createRouter({
+    history: createMemoryHistory(),
     routes : [
         { path: '/jsdoc', component: TheCptJsdoc },
         { path: '/generator', component: TheCptGeneratorMap }
     ]
 });
 
-new Vue({
-    router,
-    render: h => h(App)
-}).$mount("#app");
+app.use(router);
+app.mount('#app');

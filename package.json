@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "doclets": "node build/doclets.js -p . -t src/data/",
-    "storybook": "start-storybook -p 6006 -s src/assets/"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "engines": {
     "node": "~16.14.0",
@@ -20,28 +21,38 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
+    "@babel/eslint-parser": "^7.24.1",
+    "@babel/preset-env": "^7.24.3",
+    "@chromatic-com/storybook": "^1.2.25",
     "@highlightjs/vue-plugin": "^0.9.0",
-    "@storybook/addon-actions": "^6.2.2",
-    "@storybook/addon-essentials": "^6.2.2",
-    "@storybook/addon-links": "^6.2.2",
-    "@storybook/vue": "^6.2.2",
-    "@vue/cli-plugin-babel": "4.1.1",
-    "@vue/cli-plugin-eslint": "4.1.1",
-    "@vue/cli-service": "4.1.1",
-    "babel-eslint": "^10.0.3",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-interactions": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/addon-mdx-gfm": "^8.0.5",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.2",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/test": "^8.0.5",
+    "@storybook/vue3": "^8.0.5",
+    "@storybook/vue3-webpack5": "^8.0.5",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "@vue/compiler-sfc": "^3.4.21",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "common-tags": "^1.8.0",
     "dataobject-parser": "^1.2.1",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.0.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-vue": "^9.24.0",
     "highlight.js": "^10.7.2",
-    "jsdoc": "^3.6.6",
+    "jsdoc": "^4.0.2",
     "merge-deep": "^3.0.3",
-    "vue": "^2.6.11",
-    "vue-loader": "^15.9.6",
-    "vue-router": "^3.1.6",
-    "vue-template-compiler": "^2.6.11",
-    "vuejs-logger": "^1.5.5"
+    "storybook": "^8.0.5",
+    "vue": "^3.4.21",
+    "vue-loader": "^17.4.2",
+    "vue-router": "^4.3.0",
+    "vuejs3-logger": "^1.0.0"
   },
   "eslintConfig": {
     "root": true,
@@ -50,11 +61,19 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:storybook/recommended"
     ],
-    "rules": {},
+    "rules": {
+      "vue/no-mutating-props": [
+        "error",
+        {
+          "shallowOnly": true
+        }
+      ]
+    },
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     }
   },
   "postcss": {
