@@ -42,7 +42,8 @@ import {
     MousePosition as GeoportalMousePosition,
     ReverseGeocode,
     SearchEngine,
-    GetFeatureInfo
+    GetFeatureInfo,
+    CRS
 } from "geoportal-extensions-openlayers";
 
 import Gp from "geoportal-access-lib"
@@ -147,6 +148,9 @@ export function addMap(options, status) {
             }
         });
 
+        // Chargement des CRS par defaut
+        CRS.loadByDefault();
+        
         var map = new Map({
             target : "map",
             layers : layersOptions,
