@@ -57,7 +57,7 @@ export default {
         float: left;
         border: 1px solid #ccc;
         background-color: #f1f1f1;
-        width: 20%;
+        width: 35%;
         height: 300px;
         overflow: auto;
     }
