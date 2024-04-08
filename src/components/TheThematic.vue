@@ -7,7 +7,7 @@
                 <input type="checkbox" @change="onToggleTheme" id="slider">
                 <span class="slider round"></span>
             </label>
-            <label for="slider" ref="labelSlider"></label>
+            <label for="slider" ref="labelSlider" id="labelSlider"></label>
         </div>
     </div>
 </template>
@@ -55,9 +55,6 @@ export default {
             nodes.forEach(node => {
                 node.rel = "alternate stylesheet";
             });
-        },
-        hideComponent() {
-            this.$refs.labelSlider.style.display = "none";
         }
     }
 };
@@ -160,5 +157,10 @@ export default {
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+    #labelSlider {
+        margin-left: 20px;
+        vertical-align: bottom;
     }
 </style>
