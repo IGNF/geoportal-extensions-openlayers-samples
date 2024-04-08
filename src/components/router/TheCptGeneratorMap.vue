@@ -2,50 +2,59 @@
 <template>
     <div class="">
 
-        <h2>Generateur de carte {{ name }}</h2>
+        <div ref="allParams">
 
-        <form
-            id="" 
-            @submit="onSubmitGenerateMap" 
-            action="javascript:void(0);"
-            novalidate>
+            <h2 id="title-params">Generateur de carte {{ name }}</h2>
 
-            <!-- gestion des options de la carte -->
-            <TheCollapsible active=false name="menu-options-map" title="Options de la carte" />
-            <div id="params-map">
-                <TheCptOptionsMenu v-bind:names="getMapNames"/>
-                <div
-                    v-for="options in getMapOptions" 
-                    v-bind:key="options.id">
-                    <TheCptOptions 
-                        v-bind:options="options" 
-                        @check-option=onActive />
+            <form
+                id="params-form" 
+                @submit="onSubmitGenerateMap" 
+                action="javascript:void(0);"
+                novalidate>
+
+                <!-- gestion des options de la carte -->
+                <div id="options">
+                    <TheCollapsible active=false name="menu-options-map" title="Options de la carte" />
+                    <div id="params-map">
+                        <TheCptOptionsMenu v-bind:names="getMapNames"/>
+                        <div
+                            v-for="options in getMapOptions" 
+                            v-bind:key="options.id">
+                            <TheCptOptions 
+                                v-bind:options="options" 
+                                @check-option=onActive />
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- gestion des options des widgets -->
-            <TheCollapsible active=false name="menu-options-widgets" title="Options des widgets" />
-            <div id="params-widgets">
-                <TheCptOptionsMenu v-bind:names="getWidgetNames"/>
-                <div
-                    v-for="options in getWidgetOptions" 
-                    v-bind:key="options.id">
-                    <TheCptOptions 
-                        v-bind:options="options" 
-                        @check-option=onActive />
+                <!-- gestion des options des widgets -->
+                <div id="widgets">
+                    <TheCollapsible active=false name="menu-options-widgets" title="Options des widgets" />
+                    <div id="params-widgets">
+                        <TheCptOptionsMenu v-bind:names="getWidgetNames"/>
+                        <div
+                            v-for="options in getWidgetOptions" 
+                            v-bind:key="options.id">
+                            <TheCptOptions 
+                                v-bind:options="options" 
+                                @check-option=onActive />
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- gestion des options de génération -->
-            <TheCollapsible active=true name="menu-options-generate" title="Options de génération de la carte" />
-            <div id="params-generate">
-                <button class="button" type="submit">Générer la carte</button>
-                <button class="button" type="button" @click="onClickReset">Réinitialiser les options</button>
-                <button class="button" type="button" @click="onClickShowCode">Afficher le code</button>
-                <button class="button" type="button" @click="onClickExportMap">Exporter la carte</button>
-            </div>
+                <!-- gestion des options de génération -->
+                <div id="generation">
+                <TheCollapsible active=true name="menu-options-generate" title="Options de génération de la carte" />
+                    <div id="params-generate">
+                        <button class="button" type="submit">Générer la carte</button>
+                        <button class="button" type="button" @click="onClickReset">Réinitialiser les options</button>
+                        <button class="button" type="button" @click="onClickShowCode">Afficher le code</button>
+                        <button class="button" type="button" @click="onClickExportMap">Exporter la carte</button>
+                    </div>
+                </div>
 
-        </form>
+            </form>
+        </div>
 
         <!-- affichage de la carte -->
         <div id="mapContainer" v-bind:style="{ display : display }">
@@ -228,15 +237,42 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #map {
-    height: 400px;
+    height: 700px;
     background-image:url("./../../assets/waiting.gif");
     background-position:center center;
     background-repeat:no-repeat;
+}
+#params-title {
+    display: flex;
+    flex-direction: column;
+}
+#all-params {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#options {
+    width:20%
+}
+
+#widgets {
+    width:35%
+}
+
+#generation {
+    width:35%
 }
 #params-generate,
 #params-widgets,
 #params-map {
     margin:0px;
+    margin-bottom: 20px;
+}
+
+#params-form {
+display: flex;
+  align-items: stretch;
 }
 
 .button {

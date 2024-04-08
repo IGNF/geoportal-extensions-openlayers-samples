@@ -1,10 +1,14 @@
 <!-- classe generique -->
 <template>
     <div id="toggle">
-        <label id="switch" class="switch">
-            <input type="checkbox" @change="onToggleTheme" id="slider">
-            <span class="slider round"></span>
-        </label>
+    <h2>Thème</h2>
+        <div>
+            <label id="switch" class="switch">
+                <input type="checkbox" @change="onToggleTheme" id="slider">
+                <span class="slider round"></span>
+            </label>
+            <label for="slider" ref="labelSlider" id="labelSlider"></label>
+        </div>
     </div>
 </template>
 
@@ -19,6 +23,7 @@ export default {
         // <link href="./node_modules/geoportal-extensions-openlayers/css/Dsfr.css" rel="alternate stylesheet" id="dsfr">
     },
     mounted() {
+        this.$refs.labelSlider.innerHTML = "Classique";
         localStorage.setItem("theme", "portail");
         if (document.getElementById("slider")) {
             document.getElementById("slider").checked = false;
@@ -31,10 +36,12 @@ export default {
 
             if (localStorage.getItem("theme") === "portail") {
                 localStorage.setItem("theme", "dsfr");
+                this.$refs.labelSlider.innerHTML = "DSFR";
                 this.enableStylesheet(dsfr);
                 this.disableStylesheet(portail);
             } else {
                 localStorage.setItem("theme", "portail");
+                this.$refs.labelSlider.innerHTML = "Classique";
                 this.enableStylesheet(portail);
                 this.disableStylesheet(dsfr);
             }
@@ -67,6 +74,7 @@ export default {
         height: 100%;
         background: var(--color-secondary);
         flex-direction: column;
+        margin-bottom: 20px;
         /* justify-content: center;
         align-items: center; */
     }
@@ -120,7 +128,7 @@ export default {
         -webkit-transition: 0.4s;
         transition: 0.4s;
         box-shadow: 0 0px 15px #2020203d;
-        background: white url("https://i.ibb.co/FxzBYR9/night.png");
+        background: white;
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -137,7 +145,7 @@ export default {
         -webkit-transform: translateX(24px);
         -ms-transform: translateX(24px);
         transform: translateX(24px);
-        background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+        background: white;
         background-repeat: no-repeat;
         background-position: center;
     }
@@ -149,5 +157,10 @@ export default {
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+    #labelSlider {
+        margin-left: 20px;
+        vertical-align: bottom;
     }
 </style>

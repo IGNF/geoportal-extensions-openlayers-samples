@@ -3,23 +3,20 @@
 <template>
     <div id="app">
 
-        <TheHeader title="Exemples d'utilisation de l'API des extensions"/>
+        <TheHeader title="Démonstrateur des extensions Géoplateforme pour OpenLayers 8"/>
         <div id="app-content">
+
+            <TheRouter :name="name" />
             <TheThematic/>
+            <router-view></router-view>
             <div class="header-library">
                 <div class="header-p">
                     <a :href="url">
                         <img src="./assets/logo-openlayers.png" alt="OpenLayers" width="50" height="50">
                     </a>
+                    <div class="header-p">Accès à la bibliothèque des <a :href="source">extensions Geoportail</a></div>
                 </div>
-                <div class="header-p">Accès à la bibliothèque des <a :href="source">extensions Geoportail</a></div>
             </div>
-            
-
-            <TheRouter :name="name" />
-
-            <router-view></router-view>
-
             <TheFooter/>
         </div>
 
@@ -68,5 +65,6 @@ export default {
     }
     .header-p {
         margin: 10px;
+        display: flex;
     }
 </style>
