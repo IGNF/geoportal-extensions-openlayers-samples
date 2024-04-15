@@ -26,6 +26,7 @@ jobs:
         with:
           publish-dir: './dist'
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: true
           deploy-message: "Deploy from GitHub Actions Netlify"
           enable-github-deployment: false
         env:
