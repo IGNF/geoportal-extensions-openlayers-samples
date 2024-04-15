@@ -1,13 +1,13 @@
 <!-- classe generique -->
 <template>
-    <div id="toggle">
+    <div class="toggle">
     <h2>Thème</h2>
-        <div>
+        <div class="container">
             <label id="switch" class="switch">
                 <input type="checkbox" @change="onToggleTheme" id="slider">
                 <span class="slider round"></span>
             </label>
-            <label for="slider" ref="labelSlider" id="labelSlider"></label>
+            <label for="slider" ref="labelSlider" class="labelSlider"></label>
         </div>
     </div>
 </template>
@@ -68,7 +68,12 @@ export default {
         --font-color: #000000;
     }
 
-    #toggle {
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle {
         display: flex;
         width: 100%;
         height: 100%;
@@ -79,7 +84,7 @@ export default {
         align-items: center; */
     }
 
-    #toggle button {
+    .toggle button {
         color: var(--font-color);
         background: var(--color-primary);
         padding: 10px 20px;
@@ -159,7 +164,7 @@ export default {
         border-radius: 50%;
     }
 
-    #labelSlider {
+    .labelSlider {
         margin-left: 20px;
         vertical-align: bottom;
     }
