@@ -18,9 +18,11 @@ export default {
     name: "TheThematic",
     props: {},
     beforeMount() {
-        // INFO l'opération d'ajout des tags link est realisée par webpack (cf. vue.config.js) :
+        // INFO 
+        // l'opération d'ajout des tags link pour les thémes est realisée par webpack (cf. vue.config.js) :
         // <link href="./node_modules/geoportal-extensions-openlayers/css/Portail.css" rel="stylesheet" id="portail">
         // <link href="./node_modules/geoportal-extensions-openlayers/css/Dsfr.css" rel="alternate stylesheet" id="dsfr">
+        // idem pour les css di DSFR !
     },
     mounted() {
         this.$refs.labelSlider.innerHTML = "Classique";

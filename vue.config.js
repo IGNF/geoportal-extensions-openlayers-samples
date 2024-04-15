@@ -11,8 +11,10 @@ module.exports = {
         patterns : [
           { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Portail.css"), to : "theme"},
           { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Dsfr.css"), to : "theme"},
-          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/dsfr.css"), to : "css"},
-          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/utility/icons/icons.css"), to : "css"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/dsfr.css"), to : "dsfr"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.css"), to : "dsfr/utility/icons/icons-system/"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/icons/system/"), to : "dsfr/icons/system"},
+          { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/fonts/"), to : "dsfr/fonts"},
         ]
       }),
       new HtmlWebpackTagsPlugin({
@@ -26,14 +28,14 @@ module.exports = {
             }
           },
           {
-            path : "css/dsfr.css",
+            path : "dsfr/dsfr.css",
             attributes : {
               rel : "alternate stylesheet",
               id : "dsfr1"
             }
           },
           {
-            path : "css/icons.css",
+            path : "dsfr/utility/icons/icons-system/icons-system.css",
             attributes : {
               rel : "alternate stylesheet",
               id : "dsfr2"
