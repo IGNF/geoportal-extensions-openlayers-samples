@@ -71,6 +71,26 @@ var data = {
         geoportalattribution: {
             code: "",
             class: "GeoportalAttribution"
+        },
+        geoportalzoom: {
+            code: "",
+            class: "GeoportalZoom"
+        },
+        geoportaloverviewmap: {
+            code: "",
+            class: "GeoportalOverviewMap"
+        },
+        geoportalfullscreen: {
+            code: "",
+            class: "GeoportalFullScreen"
+        },
+        catalog: {
+            code: "",
+            class: "Catalog"
+        },
+        legends: {
+            code: "",
+            class: "Legends"
         }
     }
 };

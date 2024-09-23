@@ -9,7 +9,7 @@ module.exports = {
     plugins: [
       new CopyWebpackPlugin ({
         patterns : [
-          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Portail.css"), to : "theme"},
+          { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Classic.css"), to : "theme"},
           { from : path.join(__dirname, "node_modules/geoportal-extensions-openlayers/css/Dsfr.css"), to : "theme"},
           { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/dsfr.css"), to : "dsfr"},
           { from : path.join(__dirname, "node_modules/@gouvfr/dsfr/dist/utility/icons/icons-system/icons-system.css"), to : "dsfr/utility/icons/icons-system/"},
@@ -21,7 +21,7 @@ module.exports = {
         append : false, 
         links : [
           {
-            path : "theme/Portail.css",
+            path : "theme/Classic.css",
             attributes : {
               rel : "stylesheet",
               id : "portail"

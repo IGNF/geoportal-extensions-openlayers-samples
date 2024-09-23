@@ -1,0 +1,1 @@
+{"name":"legends","auto":true,"params":[{"type":{"names":["Object"]},"description":"options for function call.","name":"options","value":null,"section":true}],"examples":["var legends = new ol.control.Legends();\nmap.addControl(legends);"]}

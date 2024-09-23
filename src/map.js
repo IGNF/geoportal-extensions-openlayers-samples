@@ -21,7 +21,7 @@ import "ol/ol.css";
 // import "@gouvfr/dsfr/dist/dsfr.css";
 // import "@gouvfr/dsfr/dist/utility/icons/icons.css";
 // import "geoportal-extensions-openlayers/css/Dsfr.css";
-// import "geoportal-extensions-openlayers/css/Portail.css";
+// import "geoportal-extensions-openlayers/css/Classic.css";
 
 import {
     version,
@@ -43,7 +43,12 @@ import {
     ReverseGeocode,
     SearchEngine,
     GetFeatureInfo,
-    CRS
+    CRS,
+    Legends,
+    Catalog,
+    GeoportalZoom,
+    GeoportalOverviewMap,
+    GeoportalFullScreen
 } from "geoportal-extensions-openlayers";
 
 import Gp from "geoportal-access-lib"
@@ -62,6 +67,11 @@ import JsonGeoportalMousePosition from "./data/openlayers-mouseposition.doclet.j
 import JsonReverseGeocode from "./data/openlayers-reversegeocode.doclet.json";
 import JsonRoute from "./data/openlayers-route.doclet.json";
 import JsonSearchEngine from "./data/openlayers-searchengine.doclet.json";
+import JsonFullScreen from "./data/openlayers-geoportalfullscreen.doclet.json";
+import JsonOverviewMap from "./data/openlayers-geoportaloverviewmap.doclet.json";
+import JsonZoom from "./data/openlayers-geoportalzoom.doclet.json";
+import JsonCatalog from "./data/openlayers-catalog.doclet.json";
+import JsonLegends from "./data/openlayers-legends.doclet.json";
 
 import JsonOlView from "./data/ol/openlayers-view.json";
 import JsonOlLayer from "./data/ol/openlayers-layer.json";
@@ -162,7 +172,7 @@ export function addMap(options, status) {
         var opts;
         if (status.drawing) {
             opts = setOptions(options.drawing);
-            var drawing = new Drawing();
+            var drawing = new Drawing(opts);
             map.addControl(drawing);
             tpl.addWidget("drawing", opts);
         }
@@ -244,6 +254,40 @@ export function addMap(options, status) {
             map.addControl(attributions);
             tpl.addWidget("geoportalattribution", opts);
         }
+        if (status.geoportalzoom) {
+            opts = setOptions(options.geoportalzoom);
+            var zoom = new GeoportalZoom(opts);
+            map.addControl(zoom);
+            tpl.addWidget("geoportalzoom", opts);
+        }
+        if (status.geoportalfullscreen) {
+            opts = setOptions(options.geoportalfullscreen);
+            opts.position = "bottom-left";
+            var fullscreen = new GeoportalFullScreen(opts);
+            map.addControl(fullscreen);
+            tpl.addWidget("geoportalfullscreen", opts);
+        }
+        if (status.legends) {
+            opts = setOptions(options.legends);
+            opts.position = "bottom-left";
+            var legends = new Legends(opts);
+            map.addControl(legends);
+            tpl.addWidget("legends", opts);
+        }
+        if (status.catalog) {
+            opts = setOptions(options.catalog);
+            opts.position = "bottom-left";
+            var catalog = new Catalog(opts);
+            map.addControl(catalog);
+            tpl.addWidget("catalog", opts);
+        }
+        if (status.geoportaloverviewmap) {
+            opts = setOptions(options.geoportaloverviewmap);
+            opts.position = "bottom-left";
+            var overviewmap = new GeoportalOverviewMap(opts);
+            map.addControl(overviewmap);
+            tpl.addWidget("geoportaloverviewmap", opts);
+        }
     };
 
     // Appel autoconf
@@ -278,7 +322,12 @@ export function getWidgetOptions() {
         reversegeocode : JsonReverseGeocode,
         searchengine : JsonSearchEngine,
         isocurve : JsonIsoCurve,
-        elevationpath : JsonElevationPath
+        elevationpath : JsonElevationPath,
+        geoportalfullscreen : JsonFullScreen,
+        geoportalzoom : JsonZoom,
+        geoportaloverviewmap : JsonOverviewMap,
+        catalog : JsonCatalog,
+        legends : JsonLegends,
     };
 }
 
@@ -308,7 +357,12 @@ export function getWidgetStatus() {
         reversegeocode : false,
         searchengine : false,
         isocurve : false,
-        elevationpath : false
+        elevationpath : false,
+        geoportalfullscreen : true,
+        geoportalzoom : true,
+        geoportaloverviewmap : true,
+        catalog : true,
+        legends : true
     };
 }
 

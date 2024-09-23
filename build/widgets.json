@@ -14,6 +14,11 @@
         "node_modules/geoportal-extensions-openlayers/src/packages/Controls/ReverseGeocode/ReverseGeocode.js",
         "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Measures/MeasureArea.js",
         "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Measures/MeasureLength.js",
-        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Measures/MeasureAzimuth.js"
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Measures/MeasureAzimuth.js",
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Catalog/Catalog.js",
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Legends/Legends.js",
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/OverviewMap/GeoportalOverviewMap.js",
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/FullScreen/GeoportalFullScreen.js",
+        "node_modules/geoportal-extensions-openlayers/src/packages/Controls/Zoom/GeoportalZoom.js"
     ]
 }
