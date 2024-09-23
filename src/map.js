@@ -170,80 +170,105 @@ export function addMap(options, status) {
         tpl.addView(setOptions(options.ol.view));
 
         var opts;
+        if (status.geoportalzoom) {
+            opts = setOptions(options.geoportalzoom);
+            opts.position = "top-left";
+            var zoom = new GeoportalZoom(opts);
+            map.addControl(zoom);
+            tpl.addWidget("geoportalzoom", opts);
+        }
         if (status.drawing) {
             opts = setOptions(options.drawing);
+            opts.position = "bottom-right";
             var drawing = new Drawing(opts);
             map.addControl(drawing);
             tpl.addWidget("drawing", opts);
         }
         if (status.isocurve) {
             opts = setOptions(options.isocurve);
+            opts.position = "bottom-right";
             var iso = new Isocurve(opts);
             map.addControl(iso);
             tpl.addWidget("isocurve", opts);
         }
         if (status.layerimport) {
             opts = setOptions(options.layerimport);
+            opts.position = "bottom-right";
             var layerImport = new LayerImport(opts);
             map.addControl(layerImport);
             tpl.addWidget("layerimport", opts);
         }
         if (status.layerswitcher) {
             opts = setOptions(options.layerswitcher);
+            opts.options = {
+                panel: true,
+                position : "top-right"
+            }
             var layerSwitcher = new LayerSwitcher(opts);
             map.addControl(layerSwitcher);
             tpl.addWidget("layerswitcher", opts);
         }
         if (status.geoportalmouseposition) {
             opts = setOptions(options.geoportalmouseposition);
+            opts.position = "top-right";
             var mp = new GeoportalMousePosition(opts);
             map.addControl(mp);
             tpl.addWidget("geoportalmouseposition", opts);
         }
         if (status.route) {
             opts = setOptions(options.route);
+            opts.position = "bottom-right";
             var route = new Route(opts);
             map.addControl(route);
             tpl.addWidget("route", opts);
         }
         if (status.reversegeocode) {
             opts = setOptions(options.reversegeocode);
+            opts.position = "bottom-right";
             var reverse = new ReverseGeocode(opts);
             map.addControl(reverse);
             tpl.addWidget("reversegeocode", opts);
         }
         if (status.searchengine) {
             opts = setOptions(options.searchengine);
+            opts.position = "top-left";
             var search = new SearchEngine(opts);
             map.addControl(search);
             tpl.addWidget("searchengine", opts);
         }
         if (status.getfeatureinfo) {
             opts = setOptions(options.getfeatureinfo);
+            opts.options = {
+                position : "top-right"
+            };
             var feature =  new GetFeatureInfo(opts);
             map.addControl(feature);
             tpl.addWidget("getfeatureinfo", opts);
         }
         if (status.measurelength) {
             opts = setOptions(options.measurelength);
+            opts.position = "top-left";
             var measureLength = new MeasureLength(opts);
             map.addControl(measureLength);
             tpl.addWidget("measurelength", opts);
         }
         if (status.measurearea) {
             opts = setOptions(options.measurearea);
+            opts.position = "top-left";
             var measureArea = new MeasureArea(opts);
             map.addControl(measureArea);
             tpl.addWidget("measurearea", opts);
         }
         if (status.measureazimuth) {
             opts = setOptions(options.measureazimuth);
+            opts.position = "top-left";
             var measureAzimuth = new MeasureAzimuth(opts);
             map.addControl(measureAzimuth);
             tpl.addWidget("measureazimuth", opts);
         }
         if (status.elevationpath) {
             opts = setOptions(options.elevationpath);
+            opts.position = "top-left";
             var measureProfil = new ElevationPath(opts);
             map.addControl(measureProfil);
             tpl.addWidget("elevationpath", opts);
@@ -253,12 +278,6 @@ export function addMap(options, status) {
             var attributions = new GeoportalAttribution(opts);
             map.addControl(attributions);
             tpl.addWidget("geoportalattribution", opts);
-        }
-        if (status.geoportalzoom) {
-            opts = setOptions(options.geoportalzoom);
-            var zoom = new GeoportalZoom(opts);
-            map.addControl(zoom);
-            tpl.addWidget("geoportalzoom", opts);
         }
         if (status.geoportalfullscreen) {
             opts = setOptions(options.geoportalfullscreen);
@@ -270,6 +289,7 @@ export function addMap(options, status) {
         if (status.legends) {
             opts = setOptions(options.legends);
             opts.position = "bottom-left";
+            opts.panel = true;
             var legends = new Legends(opts);
             map.addControl(legends);
             tpl.addWidget("legends", opts);
@@ -344,20 +364,20 @@ export function getMapOptions() {
 /** obtenir le statut des widgets par defaut */
 export function getWidgetStatus() {
     return {
-        measurelength : false,
-        measurearea : false,
-        measureazimuth : false,
-        drawing : false,
-        layerimport : false,
-        getfeatureinfo : false,
-        geoportalattribution : false,
-        route : false,
-        geoportalmouseposition : false,
-        layerswitcher : false,
-        reversegeocode : false,
-        searchengine : false,
-        isocurve : false,
-        elevationpath : false,
+        measurelength : true,
+        measurearea : true,
+        measureazimuth : true,
+        drawing : true,
+        layerimport : true,
+        getfeatureinfo : true,
+        geoportalattribution : true,
+        route : true,
+        geoportalmouseposition : true,
+        layerswitcher : true,
+        reversegeocode : true,
+        searchengine : true,
+        isocurve : true,
+        elevationpath : true,
         geoportalfullscreen : true,
         geoportalzoom : true,
         geoportaloverviewmap : true,
